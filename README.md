@@ -33,7 +33,7 @@ dcnn-sign-language-detection/
 
 ## Note on the code
 
-The code link given in the paper (`github.com/mani5100/Hand-Sign-Language-Detection`) is no longer available. The notebook in this repository was rewritten from the method described in the paper (Section III, Table I and Fig. 1) and has not yet been re-run, so results may differ from those reported. Settings that the paper does not specify (padding and strides, dense layer size, dropout rate, augmentation strengths) are listed as assumptions at the top of the notebook.
+The code link given in the paper (`github.com/mani5100/Hand-Sign-Language-Detection`) is no longer available. The notebook in this repository was rewritten from the method described in the paper (Section III, Table I and Fig. 1). Settings that the paper does not specify (padding and strides, dense layer size, dropout rate, augmentation strengths) are listed as assumptions at the top of the notebook.
 
 ## Installation
 
