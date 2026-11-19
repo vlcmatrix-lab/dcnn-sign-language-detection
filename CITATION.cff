@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the paper below."
+title: "Enhanced Model for Sign Language Detection with Deep CNN: Achieving Perfect Accuracy in Hand Gesture Recognition"
+type: software
+license: MIT
+repository-code: "https://github.com/vlcmatrix-lab/dcnn-sign-language-detection"
+authors:
+  - family-names: Rehman
+    given-names: Abdul
+  - family-names: Zaman
+    given-names: Muhammad
+  - family-names: Kehkashan
+    given-names: Tanzila
+  - family-names: Akbar
+    given-names: Faheem
+  - family-names: Hamza
+    given-names: Muhammad
+  - family-names: Riaz
+    given-names: Raja Adil
+keywords:
+  - sign language detection
+  - deep learning
+  - convolutional neural network
+  - gesture recognition
+preferred-citation:
+  type: conference-paper
+  title: "Enhanced Model for Sign Language Detection with Deep CNN: Achieving Perfect Accuracy in Hand Gesture Recognition"
+  authors:
+    - family-names: Rehman
+      given-names: Abdul
+    - family-names: Zaman
+      given-names: Muhammad
+    - family-names: Kehkashan
+      given-names: Tanzila
+    - family-names: Akbar
+      given-names: Faheem
+    - family-names: Hamza
+      given-names: Muhammad
+    - family-names: Riaz
+      given-names: Raja Adil
+  collection-title: "2024 5th International Conference on Innovative Computing (ICIC)"
+  publisher:
+    name: IEEE
+  year: 2024
+  doi: "10.1109/ICIC63915.2024.11116573"
+  url: "https://ieeexplore.ieee.org/document/11116573"

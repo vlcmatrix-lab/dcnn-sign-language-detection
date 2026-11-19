@@ -1,0 +1,35 @@
+# LaTeX source archive (kept locally, not published)
+*.zip
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Generated outputs
+results/
+
+# Data (link to official sources in the README instead)
+data/
+datasets/
+*.csv
+
+# Model weights
+*.h5
+*.keras
+*.pkl
+*.pt
+*.pth
+
+# Secrets
+.env
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
