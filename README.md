@@ -9,7 +9,7 @@
 
 [Paper (IEEE Xplore)](https://ieeexplore.ieee.org/document/11116573) | [Author's accepted version (PDF)](paper/dcnn_sign_language_icic2024.pdf)
 
-This repository accompanies the paper. It currently contains the paper and citation information only. See [Code availability](#code-availability).
+This repository contains the official code for the paper.
 
 ## Summary
 
@@ -21,16 +21,34 @@ The paper reports 100% accuracy, precision, recall and F1-score for DCNN v2 on t
 
 ```
 dcnn-sign-language-detection/
+├── notebooks/
+│   └── dcnn_sign_language_detection.ipynb   # main entry point: full pipeline
 ├── paper/
-│   └── dcnn_sign_language_icic2024.pdf   # author's accepted version
+│   └── dcnn_sign_language_icic2024.pdf      # author's accepted version
+├── requirements.txt
 ├── CITATION.cff
 ├── LICENSE
 └── README.md
 ```
 
-## Code availability
+## Note on the code
 
-The code link given in the paper (`github.com/mani5100/Hand-Sign-Language-Detection`) is no longer available. The original training notebook will be added to this repository once it has been recovered. Installation and usage instructions will be added with it.
+The code link given in the paper (`github.com/mani5100/Hand-Sign-Language-Detection`) is no longer available. The notebook in this repository was rewritten from the method described in the paper (Section III, Table I and Fig. 1) and has not yet been re-run, so results may differ from those reported. Settings that the paper does not specify (padding and strides, dense layer size, dropout rate, augmentation strengths) are listed as assumptions at the top of the notebook.
+
+## Installation
+
+Python 3.11 is recommended.
+
+```bash
+git clone https://github.com/vlcmatrix-lab/dcnn-sign-language-detection.git
+cd dcnn-sign-language-detection
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# Linux/macOS: source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+A GPU is recommended for training. The paper's experiments ran on Kaggle with two NVIDIA Tesla T4 GPUs.
 
 ## Dataset
 
@@ -38,7 +56,25 @@ The paper uses the **American Hand Sign Detection** dataset from Kaggle: 26 clas
 
 - Official source: [Kaggle: American Hand Sign Detection](https://www.kaggle.com/datasets/konami9889/american-hand-sign-detection)
 
-No data is included in this repository. Please download the dataset from the official source and follow its license terms.
+No data is included in this repository. Download the dataset from the official source, follow its license terms, and extract it into `data/asl/` at the repository root. Each image is labelled with the name of the folder that contains it (one folder per letter).
+
+## Usage
+
+```bash
+jupyter notebook notebooks/dcnn_sign_language_detection.ipynb
+```
+
+Run all cells in order. The notebook covers:
+
+1. Loading the images and resizing them to 64x64
+2. Normalization and data augmentation (brightness, contrast, sharpness, zoom)
+3. Building DCNN v2 as shown in Fig. 1 of the paper
+4. Training with Stratified K-Fold cross-validation using the settings in Table I (8 folds, 15 epochs)
+5. Training and validation curves, per-class metrics, confusion matrix, ROC curve and example predictions
+
+Figures are saved to `notebooks/results/` (created automatically). The notebook is distributed without saved outputs.
+
+The cross-dataset experiment on Indian Sign Language described in the paper is not included, because the paper does not identify that dataset.
 
 ## Results
 
@@ -64,7 +100,7 @@ The comparison models are cited in the paper.
 
 ## Citation
 
-If you use this work, please cite:
+If you use this code, please cite:
 
 ```bibtex
 @inproceedings{rehman2024enhanced,
@@ -85,4 +121,4 @@ The PDF in `paper/` is the authors' accepted version, not the publisher's typese
 
 ## License
 
-The contents of this repository, other than the paper, are released under the [MIT License](LICENSE). The copyright notice above applies to the paper.
+The code in this repository is released under the [MIT License](LICENSE). The copyright notice above applies to the paper.
